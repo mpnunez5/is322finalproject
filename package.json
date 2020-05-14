@@ -1,5 +1,6 @@
 {
-  "name": "finalproject",
+  "name": "is322project3",
+  "homepage": "https://web.njit.edu/~mpn6/is322project3/build/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

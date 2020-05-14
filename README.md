@@ -1,3 +1,5 @@
+This project is hosted on AFS: https://web.njit.edu/~mpn6/is322project3/build/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

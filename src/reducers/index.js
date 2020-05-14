@@ -94,10 +94,12 @@ const accountsReducer = (state= DEFAULT_STATE, action) => {
             return sortAccounts(state);
 
         case 'EDIT_ACCOUNT':
-            const editedName = state.accounts.findIndex(account => {
+            let editedName = state.accounts.findIndex(account => {
                 return account._id == action.payload._id;
         });
-            state.accounts[editedName].name = state.accounts['name'];
+            console.log(state.accounts[editedName].name); //lannisters
+            console.log(action.payload.name);
+            state.accounts[editedName].name = action.payload.name;
 
             return sortAccounts(state);
 

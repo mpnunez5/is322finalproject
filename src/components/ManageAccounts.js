@@ -5,23 +5,34 @@ import {editAccount} from "../actions";
 import {withdraw} from '../actions';
 
 class ManageAccounts extends React.Component {
-    state = {_id: '', amount: '', depositID:'', depositAmount:'', editName:"", editID:''}
+    state = {_id: '',
+        amount: '',
+        depositID:'',
+        depositAmount:'',
+        editName:"",
+        editID:''
+    }
 
     onFormSubmit = (event) => {
         event.preventDefault();
         this.props.withdraw(this.state._id,this.state.amount);
         this.setState({_id:'',amount:''})
     };
+
     onDepositFormSubmit = (event) => {
         event.preventDefault();
         this.props.deposit(this.state.depositID,this.state.depositAmount);
         this.setState({depositID:'', depositAmount:''})
-
     };
+
     onEditSubmit = (event) => {
         event.preventDefault();
         this.props.editAccount(this.state.editName, this.state.editID);
+        console.log(this.state.editName);
+
         this.setState({editName:'', editID:''})
+        console.log(this.state.editName);
+
     }
 
 
@@ -35,11 +46,11 @@ class ManageAccounts extends React.Component {
                         <h2 className = "card-title" style={{width: '100%', textAlign:'center'}}>Withdraw Money</h2>
                         <form className="form-group" onSubmit={this.onFormSubmit}>
                             <div className="card-body" style={{width: '100%', textAlign:'center'}}>
-                                <label>Account ID</label>
+                                <label>Enter Account ID:</label>
                                 <input type="text" className="form-control" value={this.state._id}
                                        onChange={(e) => this.setState({ _id: e.target.value })}/>
                                 <p></p>
-                               <label>Withdraw Amount</label>
+                               <label>Enter Amount to Withdraw: </label>
                                 <input type="text" className="form-control" value={this.state.amount}
                                        onChange={(e) => this.setState({ amount: e.target.value })}/>
                                    <p></p>
@@ -54,15 +65,15 @@ class ManageAccounts extends React.Component {
                         <h2 className="card-title " style={{width: '100%', textAlign:'center', padding: 10}}>Deposit Money</h2>
                         <form onSubmit={this.onDepositFormSubmit}>
                             <div className="card-body" style={{width: '100%', textAlign:'center'}}>
-                                <label>Account ID</label>
+                                <label>Enter Account ID: </label>
                                 <input type="text" className="form-control" value={this.state.depositID}
                                        onChange={(e) => this.setState({ depositID: e.target.value })}/>
                                 <p></p>
-                               <label>Deposit Amount</label>
+                               <label>Enter Amount to Deposit:</label>
                                 <input type="text" className="form-control" value={this.state.depositAmount}
                                        onChange={(e) => this.setState({ depositAmount: e.target.value })}/>
                                 <p></p>
-                                <button type="submit" className="btn btn-primary mb-2">Deposit</button>
+                                <button type="submit" className="btn btn-primary mb-2" >Deposit</button>
                                <p></p>
                             </div>
                         </form>
@@ -89,7 +100,6 @@ class ManageAccounts extends React.Component {
 
                 </form>
                 </div>
-
             </div>
         )
     }

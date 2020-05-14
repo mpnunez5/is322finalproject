@@ -43,7 +43,7 @@ class ManageAccounts extends React.Component {
                                 <input type="text" className="form-control" value={this.state.amount}
                                        onChange={(e) => this.setState({ amount: e.target.value })}/>
                                    <p></p>
-                            <button type="submit" className="btn btn-primary mb-2">Submit</button>
+                            <button type="submit" className="btn btn-primary mb-2">Withdraw</button>
                             </div>
                         </form>
                      </div>

@@ -21,7 +21,7 @@ class ManageAccounts extends React.Component {
     onEditSubmit = (event) => {
         event.preventDefault();
         this.props.editAccount(this.state.editName, this.state.editID);
-        this.setState({editName:"", editID:''})
+        this.setState({editName:'', editID:''})
     }
 
 
@@ -38,7 +38,8 @@ class ManageAccounts extends React.Component {
                                 <label>Account ID</label>
                                 <input type="text" className="form-control" value={this.state._id}
                                        onChange={(e) => this.setState({ _id: e.target.value })}/>
-                                <label>Withdraw Amount</label>
+                                <p></p>
+                               <label>Withdraw Amount</label>
                                 <input type="text" className="form-control" value={this.state.amount}
                                        onChange={(e) => this.setState({ amount: e.target.value })}/>
                                    <p></p>
@@ -56,7 +57,8 @@ class ManageAccounts extends React.Component {
                                 <label>Account ID</label>
                                 <input type="text" className="form-control" value={this.state.depositID}
                                        onChange={(e) => this.setState({ depositID: e.target.value })}/>
-                                <label>Deposit Amount</label>
+                                <p></p>
+                               <label>Deposit Amount</label>
                                 <input type="text" className="form-control" value={this.state.depositAmount}
                                        onChange={(e) => this.setState({ depositAmount: e.target.value })}/>
                                 <p></p>
@@ -74,12 +76,14 @@ class ManageAccounts extends React.Component {
                 <h2>Edit Account Name</h2>
                 <form className="form-group" onSubmit={this.onEditSubmit}>
                     <div className="form-group">
-                        <label>Name</label>
-                        <input type="text" className="form-control" style={{padding : "10px"}} value={this.state.editName}
-                               onChange={(e) => this.setState({ editName: e.target.value })}/>
-                        <label>ID</label>
+                        <label>Enter Account ID:</label>
                         <input type="text" className="form-control" value={this.state.editID}
                                onChange={(e) => this.setState({ editID: e.target.value })}/>
+                        <p></p>
+                        <label>Enter Name Name for the Account:</label>
+                        <input type="text" className="form-control" style={{padding : "10px"}} value={this.state.editName}
+                               onChange={(e) => this.setState({ editName: e.target.value })}/>
+
                     </div>
                     <button type="submit" className="btn btn-primary mb-2 align-content-center">Deposit</button>
 

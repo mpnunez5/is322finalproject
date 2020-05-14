@@ -85,7 +85,7 @@ class ManageAccounts extends React.Component {
                                onChange={(e) => this.setState({ editName: e.target.value })}/>
 
                     </div>
-                    <button type="submit" className="btn btn-primary mb-2 align-content-center">Deposit</button>
+                    <button type="submit" className="btn btn-primary mb-2 align-content-center">Edit Name</button>
 
                 </form>
                 </div>
